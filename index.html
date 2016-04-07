@@ -8,11 +8,11 @@
 <script>
 
 var app = angular.module("myApp", []);
-app.controller('MainController',  function($scope) { 
+app.controller('MainController',  function($scope, $http) { 
   $scope.title = 'Find Directions'; 
   $scope.location1 = 'Place';
   $scope.location2 = 'Destination';
-$scope.getDistance = function() {
+  $scope.getDistance = function() {
             var request = {
                 method: 'POST',
                 url: 'http://ec2-54-174-75-62.compute-1.amazonaws.com/dist',
@@ -26,7 +26,6 @@ $scope.getDistance = function() {
                 .then(function(response){
                     $scope.locations = response.data;
                 })
-
         }
 });
 </script>
@@ -37,7 +36,7 @@ $scope.getDistance = function() {
 
         <h1>{{ title}}</h1>
         
-        <form action="demo_form.asp">
+        <form>
             {{ location1 }}: <input type="text" ng-model="loc1" name="loc1" ><br>
             {{ location2 }}: <input type="text" ng-model="loc2" name="loc2" ><br>
             <button ng-click="getDistance()">Distance</button>
