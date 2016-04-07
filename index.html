@@ -1,0 +1,54 @@
+<!doctype html>
+<html ng-app="myApp" >
+  <head>
+    <link href="css/main.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+  </head>
+  <body>
+<script>
+
+var app = angular.module("myApp", []);
+app.controller('MainController',  function($scope) { 
+  $scope.title = 'Find Directions'; 
+  $scope.location1 = 'Place';
+  $scope.location2 = 'Destination';
+$scope.getDistance = function() {
+            var request = {
+                method: 'POST',
+                url: 'http://ec2-54-174-75-62.compute-1.amazonaws.com/dist',
+                data: {
+                    origin: $scope.loc1,
+                    destination: $scope.loc2
+                }
+            };
+            alert('ready to make request');
+            $http(request)
+                .then(function(response){
+                    $scope.locations = response.data;
+                })
+
+        }
+});
+</script>
+
+
+    <div class="main">
+      <div class="container" ng-controller="MainController">
+
+        <h1>{{ title}}</h1>
+        
+        <form action="demo_form.asp">
+            {{ location1 }}: <input type="text" ng-model="loc1" name="loc1" ><br>
+            {{ location2 }}: <input type="text" ng-model="loc2" name="loc2" ><br>
+            <button ng-click="getDistance()">Distance</button>
+        </form>
+        {{ locations }}
+
+
+      </div>
+    </div>
+
+
+
+  </body>
+</html>
