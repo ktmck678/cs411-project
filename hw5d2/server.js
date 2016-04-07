@@ -11,8 +11,15 @@ var table = 'api-cache'
 
 var app = express();
 app.use(bodyParser.json());
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
-app.post('/dist', bodyParser.json(), function (req, res) {
+
+
+app.post('/dist', bodyParser.json(), function (req, res, next) {
 	origin = req.body.origin
 	dest = req.body.destination 
 
@@ -52,15 +59,6 @@ app.post('/dist', bodyParser.json(), function (req, res) {
 	})
 	
 });
-
-//CORS middleware
-var allowCrossDomain = function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', 'example.com');
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
-	next();
-}
-app.use(allowCrossDomain);
 
 app.listen(3000);
 console.log("Server running on port 3000");
