@@ -9,16 +9,31 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.post('/dist', bodyParser.json(), function (req, res, next) {
+app.post('/api/meetingTime', bodyParser.json(), function (req, res, next) {
 	//check body
-	if !('timeSpan' in req.body) or !('calendars' in req.body) {
+	if (!('timeSpan' in req.body) or !('calendars' in req.body)) {
 		res.json({'error':'invalid or malformed request'})
 	}
 	res.json({'times':[
-		'datetime':'2016-04-26T17:00:00',
-		'dayOfWeek':'Tuesday'
-		]})
+		{
+			'id': 1,
+			'datetime':'2016-04-26T17:00:00',
+			'dayOfWeek':'Tuesday'
+		}
+	]})
 });
+
+app.post('/api/archiveValue', function (req, res, next) {
+	if (!('id' in req.body)) {
+		res.json({'error':'invalid or malformed request'})
+	}
+	res.json({'times':[
+		{
+			'datetime':'2016-04-26T17:00:00',
+			'dayOfWeek':'Tuesday'
+		}
+	]})
+})
 
 app.listen(3000);
 console.log("Server running on port 3000");
