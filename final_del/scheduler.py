@@ -31,13 +31,14 @@ def getEvents(ecps):
 						groups = r.groups()
 						if len(groups) > 0:
 							rule = groups[0].split(',')
-			dt = e['start']['dateTime']
-			start = datetime.strptime(dt[:len(dt) - 6], '%Y-%m-%dT%H:%M:%S').hour
-			dt = e['end']['dateTime']
-			end = datetime.strptime(dt[:len(dt) - 6], '%Y-%m-%dT%H:%M:%S').hour
-			events += [
-			{'rule': rule, 'start': start, 'end': end, 'email': ecp['email']}
-			]
+			if 'dateTime' in e['start']:
+				dt = e['start']['dateTime']
+				start = datetime.strptime(dt[:len(dt) - 6], '%Y-%m-%dT%H:%M:%S').hour
+				dt = e['end']['dateTime']
+				end = datetime.strptime(dt[:len(dt) - 6], '%Y-%m-%dT%H:%M:%S').hour
+				events += [
+				{'rule': rule, 'start': start, 'end': end, 'email': ecp['email']}
+				]
 	return events
 
 ###
