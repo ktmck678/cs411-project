@@ -1,0 +1,264 @@
+@charset "UTF-8";
+
+
+@font-face{
+    font-family: 'helvetica';
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'helvetica';
+    font-weight: normal;
+    font-style: normal;
+}
+
+* { margin: 0; }
+html, body { min-height: 100vh; }
+
+body {
+    font-family: 'Helvetica', sans-serif;
+    background-color: #fff;
+    color: #292727;
+    font-size: 18px;
+    position: relative;
+    left: 0;
+    margin: 0;
+}
+
+body a {
+    color: #292727;
+    text-decoration: underline;
+}
+
+body a:hover {
+    color: #292727;
+    text-decoration: none;
+}
+
+h1 {
+    font-family:  'Helvetica', sans-serif;
+    font-size: 64px;
+    text-transform: uppercase;
+    letter-spacing: 6pt;
+    font-weight: bold;
+}
+
+h2 {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 36px;
+    line-height: 1.3em;
+    letter-spacing: 1pt;
+}
+
+hr {
+    color: #292727;
+}
+
+.navbar {
+    background-color: #FFFFFF
+
+}
+.nav-item {
+    font-family:  'Helvetica', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 10pt;
+    font-weight: bold;
+    display: inline-block;
+}
+
+
+.page {
+    width: 100%;
+    height: auto;
+    background-color: #FFFFFF;
+    padding-bottom: 150px;
+}
+.page h1 {
+    font-size: 40px;
+    color: #292727;    left: 40%;
+}
+
+.page p {
+    color: #292727;
+    text-decoration: none;
+    padding: 20px;
+    font-family:  'Helvetica', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 4pt;
+    font-weight: bold;
+}
+.page p a {
+    color: #292727;
+    font-size: 40px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.plusButton {
+    font-family:  'Helvetica', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 7.5px 15px;
+    text-align: center;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+
+}
+.minusButton {
+    font-family:  'Helvetica', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #af091b;
+    border: none;
+    color: white;
+    padding: 7.5px 18px;
+    text-align: center;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+
+}
+
+input:focus {
+    outline: none;
+}
+
+.button {
+    margin-top: 10px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    color: #292727;
+    border-color: #292727 ;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    box-shadow: 3px 3px #292727 ;
+    outline: 0;
+}
+
+button:active {
+    background-color: #292727;
+    color: #fff;
+    outline: 0;
+}
+
+/**************************
+ NAVIGATION
+**************************/
+nav {
+    background: #444;
+    width: 100%;
+    opacity: 0.65;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index:2
+}
+nav ul {
+    padding: 0;
+    margin: 0;
+    z-index:2
+
+}
+nav ul li {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 0 15px;
+    z-index:2
+
+}
+nav ul li:hover {
+    background: #AAA;
+    z-index:2
+
+}
+nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 12px;
+    font-family:  'Helvetica', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 10pt;
+    font-weight: bold;
+    z-index:2
+
+}
+nav ul li a:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+    z-index:2
+
+}
+
+#navbar li > a {
+    padding: 0 50px;
+    z-index:2
+
+}
+/* Hide the list item that contains the link that should open and close the topnav on small screens */
+ul.topnav li.icon {display: none;}
+/* When the screen is less than 680 pixels wide, hide all list items, except for the first one ("Home"). Show the list item that contains the link to open and close the topnav (li.icon) */
+@media screen and (max-width:680px) {
+    ul.topnav li:not(:first-child) {display: none;}
+    ul.topnav li.icon {
+        float: right;
+        display: inline-block;
+    }
+}
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon.
+   This class makes the topnav look good on small screens */
+@media screen and (max-width:680px) {
+    ul.topnav.responsive {position: relative;}
+    ul.topnav.responsive li.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    ul.topnav.responsive li {
+        float: none;
+        display: inline;
+    }
+    ul.topnav.responsive li a {
+        display: block;
+        text-align: left;
+    }
+}
+/**************************
+ FOOTER
+**************************/
+footer {
+    font-size: 1em;
+    text-align: center;
+    clear: both;               /* clears on both left and right sides*/
+    padding-top: 50px;
+    color: #ccc;
+    margin: center;
+}
+footer h2 {
+    color: #292727;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 36px;
+    line-height: 1.3em;
+    letter-spacing: 1pt;
+}
+
+footer p {
+    color:#292727;
+}
+.social-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 20px;
+}
