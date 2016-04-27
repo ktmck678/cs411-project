@@ -19,26 +19,29 @@ def getEvents(ecps):
 	for ecp in ecps:
 		calendar = ecp['calendar']
 		r = requests.get('https://www.googleapis.com/calendar/v3/calendars/%s/events?key=AIzaSyAp4guGasaQV75hpYBNhI3kMT4SyZf_QnI' % calendar)
-		es = r.json()['items']
+		es = []
+		if 'items' in r.json():
+			es = r.json()['items']
 		for e in es:
-			rule = []
-			if 'recurrence' in e:
-				if 'DAILY' in str(e['recurrence']):
-					rule = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA']
-				elif 'BYDAY' in str(e['recurrence']):
-					r = re.match('.*BYDAY=(.*)$',e['recurrence'][0])
-					if r != None:
-						groups = r.groups()
-						if len(groups) > 0:
-							rule = groups[0].split(',')
-			if 'dateTime' in e['start']:
-				dt = e['start']['dateTime']
-				start = datetime.strptime(dt[:len(dt) - 6], '%Y-%m-%dT%H:%M:%S').hour
-				dt = e['end']['dateTime']
-				end = datetime.strptime(dt[:len(dt) - 6], '%Y-%m-%dT%H:%M:%S').hour
-				events += [
-				{'rule': rule, 'start': start, 'end': end, 'email': ecp['email']}
-				]
+			if 'start' in e and 'end' in e:
+				rule = []
+				if 'recurrence' in e:
+					if 'DAILY' in str(e['recurrence']):
+						rule = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA']
+					elif 'BYDAY' in str(e['recurrence']):
+						r = re.match('.*BYDAY=(.*)$',e['recurrence'][0])
+						if r != None:
+							groups = r.groups()
+							if len(groups) > 0:
+								rule = groups[0].split(',')
+				if 'dateTime' in e['start'] and 'dateTime' in e['end']:
+					dt = e['start']['dateTime']
+					start = datetime.strptime(dt[:len(dt) - 6], '%Y-%m-%dT%H:%M:%S').hour
+					dt = e['end']['dateTime']
+					end = datetime.strptime(dt[:len(dt) - 6], '%Y-%m-%dT%H:%M:%S').hour
+					events += [
+					{'rule': rule, 'start': start, 'end': end, 'email': ecp['email']}
+					]
 	return events
 
 ###
