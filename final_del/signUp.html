@@ -160,12 +160,12 @@
     </div>
     <br>
     <form novalidate>
-        <br><br>
+        <br>
         <p>Step 2: Specify the amount of Meeting Time Needed:</p>
         <br>
             <input ng-model="timeSpan">
         <br><br><br>
-        <p>Step 3: Provide emails and calendar links for all other team members.</p>
+        <p>Step 3: Provide emails and calendar links for all team members.</p>
         <p>(Make sure calendar sharing is public)</p>
         <div ng-repeat="ecp in ecps track by $index">
             <br><br>
@@ -193,6 +193,7 @@
                 <p>{{cal.dayOfWeek}} from {{cal.start}} to {{cal.end}}</p>
                 <p></p>
             </div>
+            <p>For a map of possible locations to study in at BU, click <a href="map.html">here</a>.</p>
         </div>
     </div>
 
