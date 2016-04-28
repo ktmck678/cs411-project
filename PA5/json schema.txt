@@ -1,0 +1,19 @@
+{
+    "args": String //  This is the primary key. 
+    "dist": String // in the form of "1234 km" or "1234 mi" This is just the stored value. 
+}
+{
+    "title": "Deliverable 2 Schema",
+    "type": "object",
+    "attributes": {
+        "args": {
+            "type": "string",
+            "description": "in the form of OriginDestination i.e. "BostonNew York City"
+        },
+        "dist": {
+            "type": "string",
+            "description": "In the format of 1234 km or 1234 mi, this is the stored value."
+        },
+    },
+    "required": ["args"]
+}
