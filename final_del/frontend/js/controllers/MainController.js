@@ -6,6 +6,7 @@ form.controller('MainController',  function($scope, $http) {
     $scope.ecps = [{'email':'','calendar':''}];
     $scope.times = {};
     $scope.submitted = false;
+    $scope.url = location
     $scope.submit = function() {
         ecps = [];
         for (var i = 0; i < $scope.ecps.length; i++){
