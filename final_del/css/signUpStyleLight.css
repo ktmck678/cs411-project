@@ -99,6 +99,27 @@ a:link {
     text-decoration: none;
 }
 
+div p a:link {
+    color: #292727;
+    font-family:  'Helvetica', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2pt;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#mapLink {
+    color: #292727;
+    text-decoration: none;
+    padding: 10px;
+    font-family:  'Helvetica', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2pt;
+    font-weight: bold;
+}
+
 .plusButton {
     font-family:  'Helvetica', sans-serif;
     font-size: 20px;
