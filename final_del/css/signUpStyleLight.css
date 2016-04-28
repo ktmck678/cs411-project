@@ -83,11 +83,11 @@ hr {
 .page p {
     color: #292727;
     text-decoration: none;
-    padding: 20px;
+    padding: 10px;
     font-family:  'Helvetica', sans-serif;
     font-size: 14px;
     text-transform: uppercase;
-    letter-spacing: 4pt;
+    letter-spacing: 2pt;
     font-weight: bold;
 }
 .page p a {
