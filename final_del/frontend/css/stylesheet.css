@@ -1,0 +1,417 @@
+@charset "UTF-8";
+
+
+@font-face{
+    font-family: 'helvetica';
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'helvetica';
+    font-weight: normal;
+    font-style: normal;
+}
+
+* { margin: 0; }
+html, body { min-height: 100vh; }
+
+body {
+    font-family: 'Helvetica', sans-serif;
+    background-color: #fff;
+    color: #292727;
+    font-size: 18px;
+    position: relative;
+    left: 0;
+    margin: 0;
+}
+
+body a {
+    color: #292727;
+    text-decoration: underline;
+}
+
+body a:hover {
+    color: #292727;
+    text-decoration: none;
+}
+
+h1 {
+    font-family:  'Helvetica', sans-serif;
+    font-size: 64px;
+    text-transform: uppercase;
+    letter-spacing: 6pt;
+    font-weight: bold;
+}
+
+h2 {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 36px;
+    line-height: 1.3em;
+    letter-spacing: 1pt;
+}
+
+hr {
+    color: #292727;
+}
+
+.navbar {
+    background-color: #FFFFFF
+
+}
+.nav-item {
+    font-family:  'Helvetica', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 10pt;
+    font-weight: bold;
+    display: inline-block;
+}
+
+
+.header {
+    width: 100%;
+    height: 800px;
+    background-color: #292727;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.logo {
+    position: absolute;
+    top: 19%;
+    width: 630px;
+    left: 50%;
+    margin-left: -315px;
+}
+
+.page {
+    width: 100%;
+    height: 700px;
+    background-color: #292727;
+}
+
+#menu-push{
+    background-position: top right;
+    float: right;
+    margin: 10px;
+}
+
+#logoPrint {
+    font-family:  'Helvetica', sans-serif;
+    font-size: 60px;
+    text-transform: uppercase;
+    letter-spacing: 50pt;
+    font-weight: bold;
+    color: #FFFFFF;
+    position: absolute;
+    top: 19%;
+    width: 630px;
+    left: 50%;
+    margin-left: -315px;
+}
+
+.intro .container {
+    margin-top: 180px;
+}
+
+.intro img {
+    max-width: 75px;
+    margin-bottom: 30px;
+}
+
+.intro .col-md-4 {
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+.intro .col-md-8 hr {
+    margin: 0;
+    border-top-style: solid;
+    border-top-width: 5px;
+    border-top-color: #292727;
+}
+
+.intro .col-md-8 h1, h2 {
+    padding: none;
+}
+
+.copy .row {
+    margin-top: 50px;
+}
+
+.copy .col-md-4 p {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color:#292727;
+    letter-spacing: .3pt;
+    margin-bottom: 50px;
+}
+
+
+
+form {
+    margin-bottom: 50px;
+}
+
+button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    color: #292727;
+    border-color: #292727 ;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    box-shadow: 3px 3px #292727 ;
+    outline: 0;
+}
+
+button:active {
+    background-color: #292727;
+    color: #fff;
+    outline: 0;
+}
+
+input[type="email"] {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color:#292727 ;
+    color:#292727 ;
+    width: 100%;
+    padding: 10px;
+}
+
+input:focus {
+    outline: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+::-webkit-input-placeholder {
+    color: #7591e4;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    color: #7591e4;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+    color: #7591e4;
+}
+
+:-ms-input-placeholder {
+    color: #7591e4;
+}
+
+.footer {
+    padding-top: 10%;
+    margin: 0 auto;
+}
+
+.footer img {
+    max-height: 100px;
+    float: left;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+@media (max-width: 700px) {
+    .intro .container {
+        margin-top: 20vh;
+    }
+
+    .header {
+        height: 450px;
+    }
+
+    .logo {
+        right: 16%;
+        left: 16%;
+        width: auto;
+        margin-left: 0;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+
+    .footer {
+        padding-bottom: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .footer img {
+        max-height: inherit;
+        float: left;
+        margin-top: 10px;
+        margin-right: 0;
+        width: 33%;
+    }
+}
+
+/**************************
+ CLOCK ANIMATION
+**************************/
+.clock {
+    border-radius: 50%;
+    background: #fff no-repeat center;
+    background-size: 88%;
+    height: 20em;
+    padding-bottom: 31%;
+    width: 20em;
+    position: absolute;
+    top:40%;
+    left: 60%;
+    margin-left: -315px;
+
+}
+
+.minutes-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    animation: rotate 60s infinite steps(60);
+
+}
+
+.minutes {
+    background: #000;
+    height: 40%;
+    left: 49%;
+    position: absolute;
+    top: 10%;
+    transform-origin: 50% 100%;
+    width: 2%;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+/**************************
+ NAVIGATION
+**************************/
+nav {
+    background: #444;
+    width: 100%;
+    opacity: 0.65;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index:2
+}
+nav ul {
+    padding: 0;
+    margin: 0;
+    z-index:2
+
+}
+nav ul li {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 0 15px;
+    z-index:2
+
+}
+nav ul li:hover {
+    background: #AAA;
+    z-index:2
+
+}
+nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 12px;
+    font-family:  'Helvetica', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 10pt;
+    font-weight: bold;
+    z-index:2
+
+}
+nav ul li a:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+    z-index:2
+
+}
+
+#navbar li > a {
+    padding: 0 50px;
+    z-index:2
+
+}
+/* Hide the list item that contains the link that should open and close the topnav on small screens */
+ul.topnav li.icon {display: none;}
+/* When the screen is less than 680 pixels wide, hide all list items, except for the first one ("Home"). Show the list item that contains the link to open and close the topnav (li.icon) */
+@media screen and (max-width:680px) {
+    ul.topnav li:not(:first-child) {display: none;}
+    ul.topnav li.icon {
+        float: right;
+        display: inline-block;
+    }
+}
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon.
+   This class makes the topnav look good on small screens */
+@media screen and (max-width:680px) {
+    ul.topnav.responsive {position: relative;}
+    ul.topnav.responsive li.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    ul.topnav.responsive li {
+        float: none;
+        display: inline;
+    }
+    ul.topnav.responsive li a {
+        display: block;
+        text-align: left;
+    }
+}
+/**************************
+ FOOTER
+**************************/
+footer {
+    font-size: 1em;
+    text-align: center;
+    clear: both;               /* clears on both left and right sides*/
+    padding-top: 50px;
+    color: #ccc;
+    margin: center;
+}
+footer h2 {
+    color: #292727;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 36px;
+    line-height: 1.3em;
+    letter-spacing: 1pt;
+}
+
+footer p {
+    color:#292727;
+}
+.social-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 20px;
+}

@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Tempus</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta name='description' content='a new way to get your work done'>
+    <meta property="og:title" content="Tempus">
+    <meta property="og:site_name" content="Tempus">
+    <meta property="og:url" content="">
+    <meta property="og:description" content="a new way to get your work done">
+    <meta property="og:image" content="">
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/stylesheet.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body id="home">
+<nav align="center">
+    <ul class="topnav" id="navbar">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#aboutID">About</a></li>
+        <li><a href="signUp.html">Set a meeting</a></li>
+        <li class="icon">
+            <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+        </li>
+    </ul>
+</nav>
+<br><br>
+<script>
+    function myFunction() {
+        document.getElementsByClassName("topnav")[0].classList.toggle("responsive");
+    }
+</script>
+
+<!-- TITLE/ANIMATION -->
+<header style='position: relative;' class='header'>
+
+    <div class='background' style='position: absolute; top: 90px; bottom: 0; left: 0; right: 0;'></div>
+
+
+    <!---------LOGO--------->
+
+    <div class='logo'>
+        <h1 id="logoPrint">TEMPUS</h1>
+    </div>
+
+
+    <!------CLOCK------->
+    <article class="clock">
+    <div class="minutes-container">
+        <div class="minutes"></div>
+    </div>
+    </article>
+
+
+</header>
+
+<!-- ABOUT -->
+<div class="about" id="aboutID">
+    <div class="intro">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <hr>
+                    <h1>Tempus</h1>
+                    <h2>a new way to get your work done</h2>
+                </div>
+                <div class="col-md-4">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copy" id="getStarted">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <p>We all know that it's very hard to set your meetings with other people. You can rarely find a time and place that works for everyone, and what ends up happening is a huge back and forth between all the members in the team. </p>
+                </div>
+                <div class="col-md-4">
+                    <p>Our application uses a revolutionary algorithm that uses your calendar information that you provide to help you set team meetings.</p>
+                </div>
+                <div class="col-md-4">
+                    <p> All you need to do is have one team member sign your team up and set all the necessary parameters to get our app up and running. The app will then suggest an optimal meeting time. Happy meeting!</p>
+                    <button ><a href="/signUp.html">Get Started</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+
+
+
+<!----Footer------>
+<div id="wrapper">
+    <footer>
+        <h2>Follow Us!</h2><br>
+        <a href="https://www.facebook.com/"><img src="images/facebook-wrap.png" alt="Facebook logo" class="social-icon"></a>
+        <a href="https://twitter.com/"><img src="images/twitter-wrap.png" alt="Twitter logo" class="social-icon"></a>
+        <br><br>
+        <p>&copy; 2016 Developed by The Tempus Terriers</p>
+    </footer><br><br><br>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+    // Scroll to Fade header
+    $(window).scroll(function(){
+        $("header").css("opacity", 1 - ($(window).scrollTop()-300) / 1000);
+    });
+</script>
+
+</body>
+</html>

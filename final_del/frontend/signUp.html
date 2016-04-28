@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Tempus</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta name='description' content='a new way to get your work done'>
+    <meta property="og:title" content="Tempus">
+    <meta property="og:site_name" content="Tempus">
+    <meta property="og:url" content="">
+    <meta property="og:description" content="a new way to get your work done">
+    <meta property="og:image" content="">
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/signUpStyleLight.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js">
+    </script>
+</head>
+
+
+
+
+<body id="home" ng-app="formApp">
+<nav align="center">
+    <ul class="topnav" id="navbar">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#aboutID">About</a></li>
+        <li><a href="signUp.html">Set a meeting</a></li>
+        <li class="icon">
+            <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+        </li>
+    </ul>
+</nav>
+<br><br>
+
+<div ng-controller="MainController" class="container" align="center">
+    <br>
+    <div class='row'>
+        <form class='form-horizontal'>
+            <div class='form-group'>
+                <label for='Time Span' class='col-sm-3  control-label'>Duration:</label>
+                <div class='col-sm-9'>
+                    <input ng-model="timeSpan" class='form-control'>
+                </div>
+            </div>
+        </form>
+        <form class="form-horizontal" ng-repeat="ecp in ecps track by $index">
+            <div class='form-group'>
+                <label class='col-sm-3  control-label'>Member {{$index + 1}}'s Email:</label>
+                <div class='col-sm-9'>
+                    <input class='form-control' type="text" ng-model="ecp.email" placeholder="maggie@bu.edu">
+                </div>
+            </div>
+            <div class='form-group'>
+                <label class='col-sm-3  control-label'>Member {{$index + 1}}'s Calendar:</label>
+                <div class='col-sm-9'>
+                    <input class='form-control' type="text" ng-model="ecp.calendar" placeholder="maggie@group.calendar.google.com">
+                </div>
+            </div>
+        </form>
+        <br>
+        <div class='col-sm-10'></div>
+        <div class='col-sm-2'>
+            <div class='btn-group' role="group" >
+                <button type="button" class="btn btn-default" ng-click="subtractEcps()">-</button>
+                <button type="button" class="btn btn-default" ng-click="addEcps()">+</button>
+                <button type="button" class="btn btn-default" ng-click="submit()">Submit</button>
+            </div>
+        </div>
+    </div>
+    <div class='row' ng-show="submitted">
+        <table class='table' >
+            <thead>
+                <tr>
+                    <th>Day Of Week</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat='time in times.times'>
+                    <td>{{time.dayOfWeek}}</td>
+                    <td>{{time.start}}</td>
+                    <td>{{time.end}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Archive ID: {{times.id}}</h4>
+    </div>
+
+
+</div>
+
+<!-- Modules -->
+<script src="js/app.js"></script>
+
+<!-- Controllers -->
+<script src="js/controllers/MainController.js"></script>
+
+</body>
+</html>
+

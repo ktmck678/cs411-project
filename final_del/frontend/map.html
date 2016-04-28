@@ -1,0 +1,75 @@
+<!doctype html>
+<html ng-app="mApp">
+	<head>
+		<title>Tempus</title>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/stylesheet.css" rel="stylesheet">
+	 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	</head>
+	
+	<body ng-controller="mapCtrl">
+		<nav align="center">
+			<ul class="topnav" id="navbar">
+				<li><a href="#home">Home</a></li>
+				<li><a href="#aboutID">About</a></li>
+				<li><a href="signUp.html">Set a meeting</a></li>
+				<li class="icon">
+					<a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
+				</li>
+			</ul>
+		</nav>
+		<div class='container'>
+			<br><br>
+			<div class='row'>
+				<div id='map' class='panel' style='height:250px'></div>
+			</div>
+			<div class='row' ng-show="submitted">
+				<table class='table' >
+					<thead>
+						<tr>
+							<th>Day Of Week</th>
+							<th>Start Time</th>
+							<th>End Time</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat='time in times.times'>
+							<td>{{time.dayOfWeek}}</td>
+							<td>{{time.start}}</td>
+							<td>{{time.end}}</td>
+						</tr>
+					</tbody>
+				</table>
+				<h4>Archive ID: {{times.id}}</h4>
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+		<script>
+			var myApp = angular.module('mApp',[]);
+			myApp.controller('mapCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
+				$scope.times = {};
+				$scope.submitted = false;
+				(function(){
+					var path = location.search
+					if (path.length > 4 && path.substring(0, 4) == '?id=') {
+						id = path.substring(4, path.length)
+						var request = {
+							method: 'POST',
+							url: 'http://ec2-54-174-75-62.compute-1.amazonaws.com/api/archiveValue',
+							data: {id: id}
+						}
+						$http(request).then(function(resp){
+							$scope.times = resp.data
+							$scope.submitted = true
+						})
+					}
+				})();
+			}]);
+		</script>
+		<script>
+			function myFunction() {document.getElementsByClassName("topnav")[0].classList.toggle("responsive");}
+		</script>
+		<script src='js/map.js'></script>
+		<script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyATRTZZxbbp2s_ObfMLZE7t_7rluWTcdac&callback=initMap'></script>
+	</body>
+</html>
